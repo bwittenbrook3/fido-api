@@ -13,6 +13,11 @@ gem 'simple_form'
 gem 'slim-rails'
 gem 'therubyracer', :platform=>:ruby
 gem 'thin'
+gem 'high_voltage', '~> 2.1.0'
+
+gem 'compass-rails'
+gem 'modular-scale', '1.0.6'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]

@@ -1,0 +1,9 @@
+.navcontain
+  .navbar gumby-fixed="top" id="nav1"
+    .row
+      a.toggle gumby-trigger="#nav1 > .row > ul" href="#"
+        i.icon-menu
+      .four.columns.logo = link_to root_path
+      	h2 FIDO
+      ul.eight.columns
+        == render 'layouts/navigation_links'
