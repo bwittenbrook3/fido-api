@@ -1,0 +1,15 @@
+.row
+	h2 API Documentation
+
+	h3 Get all events
+	blockquote
+		code curl -v -H "Accept: application/json" -H "Content-type: application/json" -X GET localhost:3000/events
+
+	h3 Get a new event
+	blockquote
+		code curl -v -H "Accept: application/json" -H "Content-type: application/json" -X GET localhost:3000/events/new
+
+
+	h3 Add an event
+	blockquote
+		code curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST http://localhost:3000/events -d '{"event":{"vest_id":"{vest id}", "attachment_id":"{attachment id}"}}'
