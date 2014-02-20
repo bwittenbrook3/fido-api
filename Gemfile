@@ -25,6 +25,9 @@ gem 'modular-scale', '1.0.6'
 gem 'swagger-docs', :git => 'git://github.com/richhollis/swagger-docs.git'
 gem 'swagger-ui_rails'
 
+# Used for Rails 4 in Heroku
+gem 'rails_12factor', group: :production
+
 
 
 group :development do
