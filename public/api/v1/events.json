@@ -1,0 +1,122 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000/",
+  "resourcePath": "events",
+  "apis": [
+    {
+      "path": "events.json",
+      "operations": [
+        {
+          "summary": "Fetches all Event items",
+          "responseMessages": [
+            {
+              "code": 401,
+              "message": "Unauthorized"
+            }
+          ],
+          "method": "get",
+          "type": "Event",
+          "nickname": "Events#index"
+        }
+      ]
+    },
+    {
+      "path": "events.json",
+      "operations": [
+        {
+          "summary": "Creates a new Event",
+          "parameters": [
+            {
+              "name":"body",
+              "description":"Event object that needs to be added.",
+              "required":"ture",
+              "type":"Event",
+              "paramType":"body"
+            }
+          ],
+          "authorizations":{
+            "oauth2":[
+              {
+                "scope":"write:pets",
+                "description":"modify pets in your account"
+              }
+            ]
+          },
+          "responseMessages": [
+            {
+              "code": 401,
+              "message": "Unauthorized"
+            }
+          ],
+          "method": "post",
+          "type": "Event",
+          "nickname": "Events#create"
+        }
+      ]
+    }
+  ],
+  "authorizations" : {
+    "local-oauth": {
+      "type": "oauth2",
+      "scopes": [
+        "write:pets"
+      ],
+      "grantTypes" : {
+        "implicit" : {
+          "loginEndpoint" : {
+            "url" : "http://sample.com/oauth/dialog"
+          },
+          "tokenName" : "access_code"
+        },
+        "authorization_code" : {
+          "tokenRequestEndpoint" : {
+            "url" : "http://sample.com/oauth/requestToken",
+            "clientIdName" : "client_id",
+            "clientSecretName" : "client_secret"
+          },
+          "tokenEndpoint" : {
+            "url" : "http://sample.com/oauth/token",
+            "tokenName" : "access_code"
+          }
+        }
+      }
+    },
+    "apiKey" : {
+      "type" : "apiKey",
+      "passAs" : "header"
+    }
+  },
+  "models":{
+    "Event":{
+       "id":"Event",
+       "required":[
+          "vest_id",
+          "attachment_id"
+       ],
+       "properties":{
+          "id":{
+             "type":"integer",
+             "format":"int64",
+             "description":"unique identifier for the event"
+          },
+          "vest_id":{
+             "type":"integer",
+             "description":"unique identifier of the vest"
+          },
+          "attachment_id":{
+             "type":"integer",
+             "description":"unique identifier of the atachment"
+          },
+          "created_at":{
+            "type":"date-time",
+            "description":"time this event was created"
+          },
+          "updated_at":{
+            "type":"date-time",
+            "description":"last time the event was updated"
+          }
+        }
+      }
+  }
+}

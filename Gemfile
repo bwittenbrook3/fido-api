@@ -13,10 +13,19 @@ gem 'simple_form'
 gem 'slim-rails'
 gem 'therubyracer', :platform=>:ruby
 gem 'thin'
+
+# Allows for static pages
 gem 'high_voltage', '~> 2.1.0'
 
+# Required for Gumby
 gem 'compass-rails'
 gem 'modular-scale', '1.0.6'
+
+# Generates API Docs
+gem 'swagger-docs', :git => 'git://github.com/richhollis/swagger-docs.git'
+gem 'swagger-ui_rails'
+
+
 
 group :development do
   gem 'better_errors'

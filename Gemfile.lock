@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/richhollis/swagger-docs.git
+  revision: cbf2a4539934008a45383d60fba8b0b89404197a
+  specs:
+    swagger-docs (0.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -182,6 +188,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    swagger-ui_rails (0.1.7)
     temple (0.6.7)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
@@ -236,6 +243,8 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   simple_form
   slim-rails
+  swagger-docs!
+  swagger-ui_rails
   therubyracer
   thin
   turbolinks

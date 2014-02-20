@@ -1,6 +1,9 @@
 .row
 	h2 API Documentation
 
+	= render 'swagger_ui/swagger_ui', discovery_url: '../../api/v1/api-docs.json'
+
+/!
 	h3 Get all events
 	blockquote
 		code curl -v -H "Accept: application/json" -H "Content-type: application/json" -X GET localhost:3000/events
