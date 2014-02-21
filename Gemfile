@@ -22,7 +22,9 @@ gem 'compass-rails'
 gem 'modular-scale', '1.0.6'
 
 # Generates API Docs
-gem 'swagger-docs', :git => 'git://github.com/richhollis/swagger-docs.git'
+gem 'grape'
+gem 'grape-entity'
+gem 'grape-swagger'
 gem 'swagger-ui_rails'
 
 # Used for Rails 4 in Heroku

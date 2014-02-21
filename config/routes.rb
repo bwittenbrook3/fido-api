@@ -1,5 +1,6 @@
 FidoApi::Application.routes.draw do
   devise_for :users
+  mount API::Root => 'api/'
 
   resources :events
 

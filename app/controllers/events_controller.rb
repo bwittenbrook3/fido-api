@@ -1,20 +1,5 @@
 class EventsController < ApplicationController
 
-	swagger_controller :events, "Event Management"
-
-	swagger_api :index do 
-		summary "Fetches all Event items"
-		param :query, :page, :integer, :optional, "Page number"
-    	response :unauthorized
-	end
-
-	swagger_api :create do 
-		summary "Creates a new Event"
-		param :form, :vest_id, :integer, :required, "Vest ID"
-		param :form, :attachment_id, :integer, :required, "Attachment ID"
-		response :unauthorized
-	end
-
 	def index
 		@events = Event.all
 
