@@ -5,7 +5,6 @@ module API
       entity: Event::Entity
     }
     get '/events' do
-      present Event.all, with: Event::Entity
     end
 
     desc "Get a specific Event", {
@@ -14,8 +13,18 @@ module API
     params do
       requires :id, type: Integer, desc: "id of item"
     end
-    put '/events/:id' do
-      present Event.find(params[:id]), with: Event::Entity
+    get '/events/:id' do
     end
+
+    desc "Add a post", {
+      entity: Event::Entity
+    }
+    params do
+      requires :vest_id, type: Integer
+      requires :attachment_id, type: Integer
+    end
+    post '/events' do
+    end
+
   end
 end
