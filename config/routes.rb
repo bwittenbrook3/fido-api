@@ -1,13 +1,11 @@
 FidoApi::Application.routes.draw do
   devise_for :users
 
-	constraints subdomain: 'api' do
-		scope :module => 'api' do
-			resources :events, :constraints => {:format => /(json)/}
-		end
-		mount API::Root => '/'
-		get '/', to: 'high_voltage/pages#show', id: 'api_documentation'
+	namespace :api do 
+		resources :events, :constraints => {:format => /(json)/}
 	end
+	mount API::Root => '/api'
+	get '/api', to: 'high_voltage/pages#show', id: 'api_documentation'
 
 	resources :events
   root to: 'high_voltage/pages#show', id: 'index'
