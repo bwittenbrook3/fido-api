@@ -14,6 +14,9 @@ gem 'slim-rails'
 gem 'therubyracer', :platform=>:ruby
 gem 'thin'
 
+# Adds the Twilio library 
+gem 'twilio-ruby'
+
 # Allows for static pages
 gem 'high_voltage', '~> 2.1.0'
 
