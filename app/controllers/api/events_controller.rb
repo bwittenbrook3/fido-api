@@ -8,6 +8,7 @@ module Api
 
 		def create
 			@event = Event.create(event_params)
+			@event.send_text_message_alert
 			render :json => @event
 		end
 

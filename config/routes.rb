@@ -7,6 +7,8 @@ FidoApi::Application.routes.draw do
 	mount API::Root => '/api'
 	get '/api', to: 'high_voltage/pages#show', id: 'api_documentation'
 
+
+	post '/send_text_message', to: 'send_text#send_text_message'
 	resources :events
   root to: 'high_voltage/pages#show', id: 'index'
 end
