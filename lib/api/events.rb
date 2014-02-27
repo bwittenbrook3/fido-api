@@ -21,8 +21,8 @@ module API
     }
     params do
       group :event do 
-        requires :vest_id, type: Integer, desc: "Vest ID"
-        requires :attachment_id, type: Integer, desc: "Attachment ID"
+        requires :vest_id, type: Integer, desc: "Vest ID" 
+        requires :attachment_id, type: Integer, desc: "Attachment ID" 
       end
     end
     post '/events' do

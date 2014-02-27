@@ -1,4 +1,10 @@
 class Event < ActiveRecord::Base
+	belongs_to :attachment
+	belongs_to :vest
+
+	validates :vest, presence: true 
+	validates :attachment, presence: true 
+
 	include Grape::Entity::DSL
 
 	def entity
@@ -17,7 +23,7 @@ class Event < ActiveRecord::Base
 		@client.account.messages.create({
 			:from => '+16785345126',
 			:to => number_to_send_to,
-      		:body => "ALERT: Attachment #{self.attachment_id} was triggered on Vest #{self.vest_id}!"  
+      		:body => "ALERT: Attachment #{self.attachment.name} was triggered on Vest #{self.vest.name}!"  
 		})
 	end
 

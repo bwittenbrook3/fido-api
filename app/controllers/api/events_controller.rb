@@ -7,9 +7,14 @@ module Api
 		end
 
 		def create
-			@event = Event.create(event_params)
-			@event.send_text_message_alert
-			render :json => @event
+			@event = Event.new(event_params)
+			if @event.valid?
+				@event.save
+				@event.send_text_message_alert
+				render :json => @event
+			else
+				render :json => nil, status: :unprocessable_entity 
+			end
 		end
 
 		def show
@@ -25,7 +30,7 @@ module Api
 		def destroy
 			@event = Event.find(params[:id])
 			@event.destroy
-			render :json => @event
+			render :json => nil, status: :ok
 		end
 
 		private

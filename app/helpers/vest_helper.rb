@@ -1,0 +1,2 @@
+module VestHelper
+end
