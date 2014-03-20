@@ -79,4 +79,5 @@ FidoApi::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.assets.precompile += %w( vendor/modernizr.js )
+  config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 end
