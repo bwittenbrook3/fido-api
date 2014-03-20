@@ -30,6 +30,7 @@ gem 'swagger-ui_rails'
 
 # Used for Rails 4 in Heroku
 gem 'rails_12factor', group: :production
+gem 'rails_serve_static_assets', group: :production
 
 
 
