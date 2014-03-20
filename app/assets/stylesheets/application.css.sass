@@ -1,10 +1,47 @@
+@import "foundation_and_overrides"
+@import "foundation-icons/foundation-icons.css"
+@import "swagger-ui"
 
-@import "swagger-ui.scss"
-@import "gumby"
+#header-bar
+	background:
+		color: #E8E555
+	height: 50px
+	@media #{$large-up}
+		height: 288px
+	a 
+		height: 50px
 
+.logo
+	h1
+		color: #58585A
+		text-shadow: 3px 3px 7px rgba(150, 150, 150, 0.83)
+		bottom: 0px
+		margin-bottom: 0px
+	margin-left: 10px
+	&.show-for-large-up
+		margin: 50px auto 0 auto 
+		width: 582px
+		height: 187px
 
-.logo h2
-	color: white
-	text-shadow: 0 1px 2px #191a1b, 0 1px 0 #191a1b
-	margin:
-		top: -5px
+nav.top-bar
+	background:
+		color: #58585A
+	
+.top-bar-section li:not(.has-form) a:not(.button)
+	background-color: #58585A
+
+#side-column
+	background:
+		color: #E5E5E5
+
+#menu
+	margin-top: 10px
+	i
+		color: #E8E555
+		font-size: 50px
+		float: left
+	p
+		color: #231F20
+		font-size: 25px
+		margin-top: 5px
+		margin-left: 50px

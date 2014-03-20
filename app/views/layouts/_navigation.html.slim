@@ -1,9 +1,14 @@
-.navcontain
-  .navbar gumby-fixed="top" id="nav1"
-    .row
-      a.toggle gumby-trigger="#nav1 > .row > ul" href="#"
-        i.icon-menu
-      .four.columns.logo = link_to root_path
-      	h2 FIDO
-      ul.eight.columns
-        == render 'layouts/navigation_links'
+.sticky
+	nav.top-bar data-topbar=true
+
+		ul.title-area
+			li.name
+				h1 = link_to ""
+			li.toggle-topbar
+				a
+					= "MENU "
+					i.fi-list
+
+		section.top-bar-section
+			ul.right.hide-for-large-up
+				= render "layouts/navigation_links"

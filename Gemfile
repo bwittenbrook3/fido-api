@@ -5,7 +5,6 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem 'pg'
@@ -20,9 +19,8 @@ gem 'twilio-ruby'
 # Allows for static pages
 gem 'high_voltage', '~> 2.1.0'
 
-# Required for Gumby
-gem 'compass-rails'
-gem 'modular-scale', '1.0.6'
+# Required for Foundation
+gem 'foundation-rails', '=5.2.0.0'
 
 # Generates API Docs
 gem 'grape'

@@ -1,18 +1,35 @@
-doctype
-html
+doctype html
+html lang="en"
   head
-    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
-    title
-      = content_for?(:title) ? yield(:title) : 'FIDO'
-    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'FIDO API'}"
-    == stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true
-    == javascript_include_tag "application", "data-turbolinks-track" => true
-    /!== csrf_meta_tags
-  body
-    header
-      == render 'layouts/navigation'
-    main[role="main"]
-       == render 'layouts/messages'
-       == yield
-    footer
-      == render 'layouts/footer'
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    title == content_for?(:title) ? yield(:title) : "FIDO"
+
+  = stylesheet_link_tag "application"
+  = javascript_include_tag "vendor/modernizr"
+  = javascript_include_tag "jquery"
+  = javascript_include_tag "jquery_ujs"
+  = csrf_meta_tag
+
+body
+	header
+		div id="header-bar"
+			.row
+				a.large-12.columns href="#{root_path}"
+					.logo.hide-for-large-up 
+						h1 FIDO
+					.logo.show-for-large-up = image_tag("logo_03.gif")
+		= render partial: "layouts/navigation"
+	main data-equalizer=true
+		.large-3.columns.show-for-large-up id="side-column" data-equalizer-watch=true
+			= render partial: "layouts/side_column"
+		.large-9.columns data-equalizer-watch=true
+			== yield
+	footer
+		= render partial: "layouts/footer"
+
+
+	= javascript_include_tag "application"
+
+  
