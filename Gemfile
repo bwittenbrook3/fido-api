@@ -31,8 +31,6 @@ gem 'swagger-ui_rails'
 # Used for Rails 4 in Heroku
 gem 'rails_12factor', group: :production
 
-
-
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
