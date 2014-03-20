@@ -78,5 +78,5 @@ FidoApi::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.assets.precompile += %w( vendor/modernizr.js )
+  config.assets.precompile += %w( vendor/modernizr.js foundation-icons/foundation-icons.css)
 end
