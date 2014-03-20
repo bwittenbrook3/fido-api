@@ -34,5 +34,8 @@ module FidoApi
 
     config.autoload_paths += Dir["#{config.root}/lib"]
 
+    #Add the fonts path
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
   end
 end
