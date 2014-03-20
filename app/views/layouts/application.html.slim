@@ -7,9 +7,7 @@ html lang="en"
     title == content_for?(:title) ? yield(:title) : "FIDO"
 
   = stylesheet_link_tag "application"
-  = javascript_include_tag "vendor/modernizr"
-  = javascript_include_tag "jquery"
-  = javascript_include_tag "jquery_ujs"
+  = javascript_include_tag "application"
   = csrf_meta_tag
 
 body
@@ -30,6 +28,5 @@ body
 		= render partial: "layouts/footer"
 
 
-	= javascript_include_tag "application"
 
   
