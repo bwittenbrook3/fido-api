@@ -11,6 +11,7 @@
 	a 
 		height: 50px
 
+
 .logo
 	h1
 		color: #58585A
@@ -33,6 +34,19 @@ nav.top-bar
 #side-column
 	background:
 		color: #E5E5E5
+	.side-nav
+		li > ul
+			list-style-type: square
+			> li
+				color: #e8e555
+		li.active
+			> a
+				color: #5672AF
+		a 
+			color: #231F20
+			&:hover
+				color: #5672AF
+				
 
 #menu
 	margin-top: 10px
