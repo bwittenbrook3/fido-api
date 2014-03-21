@@ -1,7 +1,47 @@
 .row
 
-	h1 Welcome
+	.row
+		.medium-9.columns
+			h1 WHAT IS FIDO?
+			h5.subheader Our project focuses on K9 and human law enforcement interaction, specifically around facilitating communication between K9s and the law enforcement officers, whether about illegal substances, bombs, or firearms from multiple locations / suspects.
+		.medium-3.columns
+			#get-started-btn = link_to "Get Started", "#", class: "button"
 
-	p We are building on the working dog and handler interaction work that Melody Jackson, Thad Starner, Clint Zeagler and the entire FIDO team have done. Our project focuses on K9 and human law enforcement interaction, specifically around facilitating communication between K9s and the law enforcement officers, whether about illegal substances, bombs, or firearms from multiple locations / suspects. K9 officers and their handlers have a strong bond and communication, however this communication faces obstacles with noisy locations, distance, and crowded spaces. In addition, other officers assigned as backup often lack the experience to read the cues from the K9 and hinder the speed and effectiveness of the K9 and handler. This is why our focus is on improving the communication between K9, handler, and groups of law enforcement officers. We hope that our project will help to make working conditions safer for the law enforcement officers, K9s and the public, making it something that goes beyond simply providing a nifty technical tool, into a project that has the potential to save lives. 
+	hr
+
+	h4 WHY IS IT IMPORTANT
+
+	P K9 officers and their handlers have a strong bond and communication, however this communication faces obstacles with noisy locations, distance, and crowded spaces. In addition, other officers assigned as backup often lack the experience to read the cues from the K9 and hinder the speed and effectiveness of the K9 and handler. This is why our focus is on improving the communication between K9, handler, and groups of law enforcement officers. We hope that our project will help to make working conditions safer for the law enforcement officers, K9s and the public, making it something that goes beyond simply providing a nifty technical tool, into a project that has the potential to save lives.
+
+	h4 HOW IT WORKS
+
+	.row id="pager"
+		.medium-3.columns = image_tag("pager-icon.png")
+		.medium-9.columns
+			h4.subheader = link_to "PAGER"
+			p 
+				|The pager offers low fidelity and low capacity information for notifications. These notifications would only be triggered for important events, and be primarily for officers who are not actively working with the K9 at the time. 
+				= link_to "Learn More..." 
+
+	hr
+
+	.row id="smartphone"
+		.medium-3.columns = image_tag("smartphone-icon.png")
+		.medium-9.columns
+			h4.subheader = link_to "SMART PHONE"
+			p 
+				|Notifications about important events are pushed to the phone, and opening them takes the officer directly to more information, rather than being required to navigate the application. An officer browsing the app can view a list of K9s in the unit and drill down to get more information about that K9. Similarly, they can browse a list of active and inactive events. Drilling down to an event lets an officer get more information about that event, including photos and other media taken by the K9 and officers, as well as being able to confirm the event, request additional backup, or add their own media for the event. 
+				= link_to "Learn More..."
+
+	hr 
+
+	.row id="glass"
+		.medium-3.columns = image_tag("glass-icon.png")
+		.medium-9.columns
+			h4.subheader = link_to "GLASS"
+			p 
+				|Glass supports real-time communication and collaboration between the dog, the handler and accompanying officers and can display and transmit much more information and media and is always in the officers’ vision. Glass would allow officers working with the K9 to get real-time updates on what the K9 is alerting to, as well as augment the K9’s feedback with their own input. Live cards support ongoing tasks, such as emergency incidents, making it an excellent way to request additional backup. 
+				= link_to "Learn More..."
+
 
 

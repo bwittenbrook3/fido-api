@@ -46,8 +46,7 @@ nav.top-bar
 			color: #231F20
 			&:hover
 				color: #5672AF
-				
-
+			
 #menu
 	margin-top: 10px
 	i
@@ -59,3 +58,23 @@ nav.top-bar
 		font-size: 25px
 		margin-top: 5px
 		margin-left: 50px
+
+.row
+	@media #{$medium-up}
+		#pager h4
+			margin-top: 10px
+		#smartphone h4
+			margin-top: 60px
+		#glass img
+			margin-top: 70px
+
+#get-started-btn
+	@media #{$small-only}
+		margin-top: 0px
+		margin-bottom: 0px
+		a.button
+			margin-bottom: 5px
+
+	@media #{$medium-up}
+		margin-top: 50px
+
