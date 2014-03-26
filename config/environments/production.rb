@@ -1,7 +1,8 @@
 FidoApi::Application.configure do
 
+  # Remove to put into production. 
   config.middleware.insert_after(::Rack::Runtime, "::Rack::Auth::Basic", "Staging") do |u, p|
-    [u, p] == ['fido', 'password']
+    [u, p] == ['FiDo', 'b40eb04e7874876cc72f0475b6b6efc3']
   end
 
   # Settings specified here will take precedence over those in config/application.rb.
