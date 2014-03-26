@@ -1,6 +1,8 @@
 FidoApi::Application.routes.draw do
   devise_for :users
 
+  get 'current_user', to: 'user#show'
+
 	namespace :api, :constraints => {:format => /(json)/} do 
 		resources :attachments
 		resources :vests

@@ -23,6 +23,10 @@ body
 		.large-3.columns.show-for-large-up id="side-column" data-equalizer-watch=true
 			= render partial: "layouts/side_column"
 		.large-9.columns data-equalizer-watch=true
+			- flash.each do |name, msg|
+			  - if msg.is_a?(String)
+			    div class="alert #{name == :notice ? "success" : "danger"}"
+			      = content_tag :div, msg, :id => "flash_#{name}"
 			== yield
 	footer
 		= render partial: "layouts/footer"

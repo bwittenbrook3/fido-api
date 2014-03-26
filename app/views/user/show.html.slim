@@ -1,0 +1,10 @@
+h2
+	|Hi, 
+	= current_user.email
+	|!
+h4.subheader Your API Key
+.medium-8.columns
+	.panel
+		p = SecureRandom.hex
+.medium-4.columns
+	= link_to "Regenerate", "#", class: "button"
