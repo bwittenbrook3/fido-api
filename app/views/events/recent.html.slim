@@ -1,0 +1,10 @@
+.panel id="search"
+	= form_tag do
+		.row.collapse
+			.medium-10.columns
+				= search_field(:event, :name, placeholder: 'Search')
+			.medium-2.columns
+				a.button.postfix href="#" Search
+
+
+== render @events

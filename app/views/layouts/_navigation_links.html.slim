@@ -1,6 +1,6 @@
 li class="#{'active' if current_page?(root_path)}" = link_to "Home", root_path
 li.has-dropdown class=""
-	= link_to "Recent Events", "#"
+	= link_to "Recent Events", recent_events_path
 	ul.dropdown
 		li = link_to "Event Type"
 		li = link_to "Location"

@@ -1,5 +1,9 @@
 class EventsController < ApplicationController
 
+	def recent
+		@events = Event.order('created_at DESC').all
+	end
+
 	def index
 		@events = Event.all
 

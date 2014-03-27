@@ -1,5 +1,10 @@
-h4
-	|Event 
-	= event.id
+= div_for(event)
+	
+	= link_to root_path
+		h4 
+			|Suspicious Item - 
+			= event.vest_id
 
-p = "Triggered by attachment #{event.attachment_id} on vest #{event.vest_id} on #{event.created_at.strftime("%B %-d, %Y at %I:%M%p")}."
+	h5.subheader.indented 
+		= time_ago_in_words(event.created_at)
+		= " ago"

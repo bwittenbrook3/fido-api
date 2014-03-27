@@ -1,20 +1,13 @@
 .row
 	h2 API Documentation
 
-	/!= render 'swagger_ui/swagger_ui', discovery_url: '../../api/v1/api-docs.json'
+	h4 API Key
+
+	p Please look for your secret API key on your user page. 
+
+	hr
+
+	h4 Swagger Docs
 
 	= render 'swagger_ui/swagger_ui', discovery_url: 'swagger_doc.json'
 
-/!
-	h3 Get all events
-	blockquote
-		code curl -v -H "Accept: application/json" -H "Content-type: application/json" -X GET localhost:3000/events
-
-	h3 Get a new event
-	blockquote
-		code curl -v -H "Accept: application/json" -H "Content-type: application/json" -X GET localhost:3000/events/new
-
-
-	h3 Add an event
-	blockquote
-		code curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST http://localhost:3000/events -d '{"event":{"vest_id":"{vest id}", "attachment_id":"{attachment id}"}}'
