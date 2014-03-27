@@ -1,10 +1,15 @@
-.panel id="search"
-	= form_tag do
-		.row.collapse
-			.medium-10.columns
-				= search_field(:event, :name, placeholder: 'Search')
-			.medium-2.columns
-				a.button.postfix href="#" Search
 
+div data-equalizer=true
+	div class="#{@event ? 'medium-6 columns' : ''}" data-equalizer-watch=true
+		.panel id="search"
+			= form_tag do
+				.row.collapse
+					.medium-10.columns
+						= search_field(:event, :id, placeholder: 'Search')
+					.medium-2.columns
+						a.button.postfix href="#" Search
+		== render @events
 
-== render @events
+	- if @event
+		
+		.medium-6.columns.right-collapse id="info_panel" data-equalizer-watch=true

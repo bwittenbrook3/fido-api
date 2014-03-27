@@ -2,6 +2,7 @@ class EventsController < ApplicationController
 
 	def recent
 		@events = Event.order('created_at DESC').all
+		@event = Event.find(params[:id]) if params[:id]
 	end
 
 	def index

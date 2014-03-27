@@ -7,6 +7,7 @@ FidoApi::Application.routes.draw do
   post '/send_text_message', to: 'send_text#send_text_message'
 	resources :events do
 		get 'recent', on: :collection
+		get 'recent', on: :member
 	end
 
 
