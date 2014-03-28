@@ -1,5 +1,5 @@
 li class="#{'active' if current_page?(root_path)}" = link_to "Home", root_path
-li.has-dropdown class=""
+li.has-dropdown class="#{'active' if (controller.controller_name=='events' && controller.action_name=='recent')}"
 	= link_to "Recent Events", recent_events_path
 	ul.dropdown
 		li = link_to "Event Type"

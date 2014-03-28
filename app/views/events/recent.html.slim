@@ -1,6 +1,5 @@
-
-div data-equalizer=true
-	div class="#{@event ? 'medium-6 columns' : ''}" data-equalizer-watch=true
+div *(@event ? {'data-equalizer' => true} : {'class' => 'medium-12 columns'})
+	div *(@event ? {'data-equalizer-watch' => true} : {}) class="#{@event ? 'medium-6 columns' : ''}"
 		.panel id="search"
 			= form_tag do
 				.row.collapse
@@ -10,6 +9,6 @@ div data-equalizer=true
 						a.button.postfix href="#" Search
 		== render @events
 
-	- if @event
-		
+	- if @event		
 		.medium-6.columns.right-collapse id="info_panel" data-equalizer-watch=true
+

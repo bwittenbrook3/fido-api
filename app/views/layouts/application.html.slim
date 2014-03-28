@@ -22,7 +22,7 @@ body
 	main data-equalizer=true
 		.large-3.columns.show-for-large-up id="side-column" data-equalizer-watch=true
 			= render partial: "layouts/side_column"
-		.large-9.columns.right-collapse data-equalizer-watch=true
+		.large-9.columns data-equalizer-watch=true
 			- flash.each do |name, msg|
 			  - if msg.is_a?(String)
 			    div class="alert #{name == :notice ? "success" : "danger"}"
