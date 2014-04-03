@@ -1,11 +1,8 @@
 li class="#{'active' if current_page?(root_path)}" = link_to "Home", root_path
-li.has-dropdown class="#{'active' if (controller.controller_name=='events' && controller.action_name=='recent')}"
+li.has-dropdown class="#{'active' if (controller.controller_name=='events' && controller.action_name=='recent')}" 
 	= link_to "Recent Events", recent_events_path
-	.triangle.right
 	ul.dropdown
-		li 
-			= link_to "Event Type"
-			.triangle.right
+		li = link_to "Event Type"
 		li = link_to "Location"
 		li = link_to "K9"
 li = link_to "Current K9s"
@@ -19,3 +16,6 @@ li.divider.hide-for-large-up
 		li.hide-for-large-up = link_to "Sign Out", destroy_user_session_path, method: :delete
 - else
 		li.hide-for-large-up = link_to "Sign In",  new_user_session_path
+
+javascript:
+	$("li.active").prepend("<div class='triangle right'></div>");

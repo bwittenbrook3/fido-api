@@ -17,6 +17,10 @@ gem 'thin'
 # Adds the Twilio library 
 gem 'twilio-ruby'
 
+#Add google maps
+gem 'gmaps4rails'
+gem 'underscore-rails'
+
 # Allows for static pages
 gem 'high_voltage', '~> 2.1.0'
 

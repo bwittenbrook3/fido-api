@@ -22,7 +22,7 @@ body
 	main data-equalizer=true
 		.large-3.columns.show-for-large-up id="side-column" data-equalizer-watch=true
 			= render partial: "layouts/side_column"
-		.large-9.columns data-equalizer-watch=true
+		.large-9.columns id="main-area" data-equalizer-watch=true
 			= render partial: "layouts/messages"
 			== yield
 	footer

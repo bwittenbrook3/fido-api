@@ -15,6 +15,8 @@
 //= require vendor/modernizr
 //= require swagger-ui
 //= require foundation
+//= require underscore
+//= require gmaps/google
 //= require_tree .
 
 $(function(){ 
