@@ -9,7 +9,6 @@ li = link_to "Current K9s"
 li = link_to "Maps"
 li class="#{'active' if current_page?(api_path)}" 
 	= link_to "API Documentation", api_path
-	.triangle.right
 li.divider.hide-for-large-up
 - if current_user
 		li.hide-for-large-up = link_to current_user.email, current_user_path
