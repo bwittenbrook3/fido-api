@@ -1,5 +1,4 @@
 = div_for(event)
-	
 	= link_to recent_event_path(event)
 		h4 
 			|Suspicious Item - 
@@ -8,3 +7,5 @@
 	h5.subheader.indented 
 		= time_ago_in_words(event.created_at)
 		= " ago"
+
+	.triangle.right

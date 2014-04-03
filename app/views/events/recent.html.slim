@@ -9,6 +9,22 @@ div *(@event ? {'data-equalizer' => true} : {'class' => 'medium-12 columns'})
 						a.button.postfix href="#" Search
 		== render @events
 
+
+
 	- if @event		
+		javascript:
+			$("#event_#{@event.id}").addClass('active')
 		.medium-6.columns.right-collapse id="info_panel" data-equalizer-watch=true
+
+			h3 Suspicious Item
+			ul
+				li Date: March 1, 2014
+				li Time: 1:34 pm
+				K9: Sam
+				Responding Officer: John Doe 
+				li Location:
+				ul 
+					li Lat: 33°46'37.3"N 
+		 			li Long: 84°23'23.0"W
+		 	p Details:  A suspicious item was found at approximately 85 5th Street NW, Atlanta, GA 30308.  K9 Sam and Officer Doe were on the scene.  No back up was requested.  The item was later found to be a misplaced package from one the surrounding retail stores.
 
