@@ -1,0 +1,17 @@
+.panel id="search"
+	= form_tag recent_events_path, :method => :get, :id => 'event-search' do
+		.row.collapse
+			.medium-10.columns
+				= search_field("search_string", nil, placeholder: 'Search')
+			.medium-2.columns
+				a.button.postfix href="#" onclick="javascript:$('#event-search').submit();" Search
+		.row.clearfix
+			.left
+				h6 search by: 
+			.left.form-checkbox
+				= check_box_tag 'type[event_type]', 1, {:checked => "checked"} 
+				= label_tag 'event type'
+				= check_box_tag 'type[location]', 1, {:checked => "checked"} 
+				= label_tag 'location'
+				= check_box_tag 'type[K9_handler]', 1, {:checked => "checked"} 
+				= label_tag 'K9 / handler'

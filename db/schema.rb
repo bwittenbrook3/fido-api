@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227062146) do
+ActiveRecord::Schema.define(version: 20140404033314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,10 @@ ActiveRecord::Schema.define(version: 20140227062146) do
     t.integer  "attachment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "alert"
+    t.string   "lat"
+    t.string   "long"
+    t.text     "details"
   end
 
   create_table "users", force: true do |t|
@@ -51,10 +55,10 @@ ActiveRecord::Schema.define(version: 20140227062146) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "vests", force: true do |t|
-    t.string   "name"
-    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "K9"
+    t.string   "officer"
   end
 
 end
