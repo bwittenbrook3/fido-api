@@ -85,4 +85,5 @@ FidoApi::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.assets.precompile += %w( vendor/modernizr.js )
+
 end

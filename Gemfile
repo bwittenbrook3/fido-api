@@ -21,6 +21,9 @@ gem 'twilio-ruby'
 gem 'gmaps4rails'
 gem 'underscore-rails'
 
+# Add Tire for search
+gem 'tire'
+
 # Allows for static pages
 gem 'high_voltage', '~> 2.1.0'
 

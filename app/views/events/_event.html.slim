@@ -2,7 +2,7 @@
 	= link_to recent_event_path(event)
 		h4 
 			|Suspicious Item - 
-			= event.vest_id
+			= event.vest.name if event.vest
 
 	h5.subheader.indented 
 		= time_ago_in_words(event.created_at)

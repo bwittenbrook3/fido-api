@@ -2,6 +2,9 @@ class Vest < ActiveRecord::Base
 	has_many :attachments
 	has_many :events
 
+	include Tire::Model::Search
+	include Tire::Model::Callbacks 
+
 	include Grape::Entity::DSL
 
 	def entity

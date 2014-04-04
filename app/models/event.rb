@@ -3,7 +3,10 @@ class Event < ActiveRecord::Base
 	belongs_to :vest
 
 	validates :vest, presence: true 
-	validates :attachment, presence: true 
+	validates :attachment, presence: true
+
+	include Tire::Model::Search
+	include Tire::Model::Callbacks 
 
 	include Grape::Entity::DSL
 

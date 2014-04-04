@@ -1,8 +1,13 @@
 class EventsController < ApplicationController
 
 	def recent
-		@events = Event.order('created_at DESC').all
-		@event = Event.find(params[:id]) if params[:id]
+		if params[:search_string]
+			@events = Event.search(params[:search_string].join(" "))
+			@event = @events.first if @events
+		else
+			@events = Event.order('created_at DESC').all
+			@event = Event.find(params[:id]) if params[:id]
+		end
 	end
 
 	def index
@@ -45,6 +50,10 @@ class EventsController < ApplicationController
 			format.html
 			format.json {render :json => @event}
 		end
+	end
+
+	def search
+		@events = Event.search(params[:search_string].join(" "))
 	end
 
 	private

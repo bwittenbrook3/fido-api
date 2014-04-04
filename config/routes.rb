@@ -6,7 +6,7 @@ FidoApi::Application.routes.draw do
   get 'current_user', to: 'user#show'
   post '/send_text_message', to: 'send_text#send_text_message'
 	resources :events do
-		get 'recent', on: :collection
+		get 'recent', on: :collection 
 		get 'recent', on: :member
 	end
 
