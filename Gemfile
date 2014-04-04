@@ -24,6 +24,9 @@ gem 'underscore-rails'
 # Add Tire for search
 gem 'tire'
 
+# Add geocoder
+gem 'geocoder'
+
 # Allows for static pages
 gem 'high_voltage', '~> 2.1.0'
 

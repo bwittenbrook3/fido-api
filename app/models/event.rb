@@ -5,9 +5,10 @@ class Event < ActiveRecord::Base
 	validates :vest, presence: true 
 	validates :attachment, presence: true
 
+	reverse_geocoded_by :latitude, :longitude
+
 	include Tire::Model::Search
 	include Tire::Model::Callbacks 
-
 	include Grape::Entity::DSL
 
 	def entity
