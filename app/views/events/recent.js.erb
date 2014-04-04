@@ -1,0 +1,3 @@
+$("#info_panel").html("<%= raw escape_javascript(render(:partial => 'info_column')) %>");
+$(".event.active").removeClass("active");
+$("#event_<%= @event.id %>").addClass("active");

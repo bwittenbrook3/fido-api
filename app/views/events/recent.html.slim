@@ -3,4 +3,8 @@ div *(@event ? {'data-equalizer' => true} : {'class' => 'medium-12 columns'})
 		= render partial: "event_search"
 		= render @events
 	- if @event		
-		= render partial: "info_column", object: @event
+		javascript:
+			$("#event_#{@event.id}").addClass('active')
+			$("#main-area").addClass("right-collapse");
+		.medium-6.columns.right-collapse id="info_panel" data-equalizer-watch=true
+			= render partial: "info_column", object: @event

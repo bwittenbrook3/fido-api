@@ -1,8 +1,9 @@
 = div_for(event)
-	= link_to recent_event_path(event)
+	= link_to recent_event_path(event), remote: true
 		h4 
-			|Suspicious Item - 
-			= event.vest.name if event.vest
+			= event.alert
+			= " - "
+			= event.vest.K9 if event.vest
 
 	h5.subheader.indented 
 		= time_ago_in_words(event.created_at)

@@ -2,11 +2,20 @@ class EventsController < ApplicationController
 
 	def recent
 		if params[:search_string]
-			@events = Event.search(params[:search_string].join(" "))
-			@event = @events.first if @events
+			@events = Event.search(params[:search_string].join(" "), load: true)
 		else
 			@events = Event.order('created_at DESC').all
-			@event = Event.find(params[:id]) if params[:id]
+		end
+
+		if params[:id]
+			@event = Event.find(params[:id])
+		else
+			@event = @events.first
+		end
+
+		respond_to do |format|
+			format.html
+			format.js
 		end
 	end
 
