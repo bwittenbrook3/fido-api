@@ -1,7 +1,18 @@
+javascript:
+	Pusher.log = function(message) {
+	  if (window.console && window.console.log) {
+	    window.console.log(message);
+	  }
+	};
+
 div *(@event ? {'data-equalizer' => true} : {'class' => 'medium-12 columns'})
 	div *(@event ? {'data-equalizer-watch' => true} : {}) class="#{@event ? 'medium-6 columns' : ''}"
 		= render partial: "event_search"
-		= render @events
+		.event_list
+			= sync_new partial: 'event', resource: Event.new, direction: :prepend
+			- @events.each do |event|
+				= sync partial: 'event', resource: event
+			/!= render @events
 	- if @event		
 		javascript:
 			$("#event_#{@event.id}").addClass('active')

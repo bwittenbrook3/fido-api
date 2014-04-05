@@ -1,6 +1,8 @@
 module Api
 	class EventsController < ApplicationController
 
+		enable_sync only: [:create, :update, :destroy]
+
 		def index
 			@events = Event.all
 			render :json => @events
@@ -36,7 +38,7 @@ module Api
 		private
 		def event_params
 			params.require(:event).permit(
-				:vest_id, :attachment_id
+				:vest_id, :attachment_id, :alert, :details, :latitude, :longitude
 			)
 		end
 	end

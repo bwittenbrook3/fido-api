@@ -27,6 +27,11 @@ gem 'tire'
 # Add geocoder
 gem 'geocoder'
 
+# Using pusher
+gem 'pusher'
+gem 'sync'
+gem 'figaro'
+
 # Allows for static pages
 gem 'high_voltage', '~> 2.1.0'
 

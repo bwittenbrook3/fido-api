@@ -17,6 +17,7 @@
 //= require foundation
 //= require underscore
 //= require gmaps/google
+//= require sync
 //= require_tree .
 
 $(function(){ 
@@ -27,3 +28,5 @@ $(function(){
 	});
 
 });
+
+

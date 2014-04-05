@@ -7,6 +7,8 @@ class Event < ActiveRecord::Base
 
 	reverse_geocoded_by :latitude, :longitude
 
+	sync :all
+
 	include Tire::Model::Search
 	include Tire::Model::Callbacks 
 	include Grape::Entity::DSL
@@ -24,16 +26,19 @@ class Event < ActiveRecord::Base
 		# set up a client to talk to the Twilio REST API 
 		@client = Twilio::REST::Client.new account_sid, auth_token 
 		 
-		@client.account.messages.create({
-			:from => '+16785345126',
-			:to => number_to_send_to,
-      		:body => "ALERT: Attachment #{self.attachment.name} was triggered on Vest #{self.vest.name}!"  
-		})
+		#@client.account.messages.create({
+		#		:from => '+16785345126',
+		#	:to => number_to_send_to,
+    #  		:body => "ALERT: Attachment #{self.attachment.id} was triggered on Vest #{self.vest.id}!"  
+		#})
 	end
 
 	class Entity < Grape::Entity
 		expose :id, documentation: {type: "Integer", desc: "Unique id of Event"}
 		expose :vest_id, documentation: {type: "Integer", desc: "ID of the Vest"}
 		expose :attachment_id, documentation: {type: "Integer", desc: "ID of the Attachment"}
+		expose :alert, documentation: {type: "String", desc: "Alert text"}
+		expose :latitude, documentation: {type: "Float"}
+		expose :longitude, documentation: {type: "Float"}
 	end
 end

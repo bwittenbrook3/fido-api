@@ -21,8 +21,11 @@ module API
     }
     params do
       group :event do 
-        requires :vest_id, type: Integer, desc: "Vest ID" 
-        requires :attachment_id, type: Integer, desc: "Attachment ID" 
+        requires :vest_id, type: Integer, desc: "Vest ID"
+        requires :attachment_id, type: Integer, desc: "Attachment ID"
+        requires :alert, type: String
+        requires :longitude, type: Float
+        requires :latitude, type: Float
       end
     end
     post '/events' do
@@ -35,6 +38,9 @@ module API
       group :event do 
         requires :vest_id, type: Integer, desc: "Vest ID"
         requires :attachment_id, type: Integer, desc: "Attachment ID"
+        requires :alert, type: String
+        requires :longitude, type: Float
+        requires :latitude, type: Float
       end
     end
     put '/events/:id' do

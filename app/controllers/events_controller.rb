@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
 
+	enable_sync only: [:create, :update, :destroy]
+
 	def recent
 		if params[:search_string]
 			@events = Event.search(params[:search_string].join(" "), load: true)
@@ -68,7 +70,7 @@ class EventsController < ApplicationController
 	private
 	def event_params
 		params.require(:event).permit(
-			:vest_id, :attachment_id
+			:vest_id, :attachment_id, :alert, :details, :latitude, :longitude
 		)
 	end
 end
