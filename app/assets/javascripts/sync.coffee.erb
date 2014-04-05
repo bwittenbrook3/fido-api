@@ -307,9 +307,6 @@ class Sync.PartialCreator
       when "append"  then @$el.before(html)
       when "prepend" then @$el.after(html)
 
-
-
-
   insert: (html, resourceId, authToken, channelUpdate, channelDestroy, selectorStart, selectorEnd) ->
     @insertPlaceholder """
       <div data-sync-id='#{selectorStart}'></div>
