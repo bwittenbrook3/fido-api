@@ -5,7 +5,7 @@ html lang="en"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
 
     title == content_for?(:title) ? yield(:title) : "FIDO"
-
+a
   = stylesheet_link_tag "application"
   = javascript_include_tag "application"
   = javascript_include_tag Sync.adapter_javascript_url
@@ -13,12 +13,6 @@ html lang="en"
 
 body
 	header
-		div id="header-bar"
-			.row
-				a.large-12.columns href="#{root_path}"
-					.logo.hide-for-large-up 
-						h1 FIDO
-					.logo.show-for-large-up = image_tag("logo_03.gif")
 		= render partial: "layouts/navigation"
 	main data-equalizer=true
 		.large-3.columns.show-for-large-up id="side-column" data-equalizer-watch=true

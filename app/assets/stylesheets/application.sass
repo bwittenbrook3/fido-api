@@ -13,12 +13,14 @@
 
 
 .logo
+	padding: 4px 0px 4px 50px
+	img
+		height: 37px
 	h1
 		color: #58585A
 		text-shadow: 3px 3px 7px rgba(150, 150, 150, 0.83)
 		bottom: 0px
 		margin-bottom: 0px
-	margin-left: 10px
 	&.show-for-large-up
 		margin: 50px auto 0 auto 
 		width: 582px
@@ -34,6 +36,9 @@ nav.top-bar
 #side-column
 	background:
 		color: #E5E5E5
+	padding: 
+		top: 40px
+	min-height: calc(100% - 45px)
 	.side-nav
 		li > ul
 			list-style-type: square
@@ -52,6 +57,7 @@ nav.top-bar
 				margin-right: (-2.2 * $column-gutter)
 		a 
 			color: #231F20
+			font-size: 16px
 			&:hover
 				color: #5672AF
 
@@ -110,6 +116,12 @@ div.event:not(:last-child)
 	padding-right: (1 * $column-gutter)
 	padding-top: 30px
 
+nav.top-bar
+	i 
+		font-size: 20px
+		margin-right: 8px
+	a
+		height: 45px
 .event.active 
 	a h4
 		color: #5672AF
@@ -124,6 +136,9 @@ div.event:not(:last-child)
 
 .right-collapse
 	padding-right: 0
+
+#main-area
+	min-height: calc(100% - 45px)
 
 img,
 object,

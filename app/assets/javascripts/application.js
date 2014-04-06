@@ -20,10 +20,15 @@
 //= require sync
 //= require_tree .
 
+$( document ).ready(function() {
+	$(".side-nav").css("height", ($(window).height()- 85) + "px");
+});
+
 $(function(){ 
 	$(document).foundation(); 
 
 	$(window).scroll(function() {
+		$(".side-nav").css("height", ($(window).height()- 85) + "px");
 	  $(document).foundation('equalizer', 'reflow');
 	});
 

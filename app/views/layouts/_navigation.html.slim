@@ -1,11 +1,11 @@
-nav.top-bar data-topbar=true
+nav.top-bar.clearfix data-topbar=true
 
 	ul.title-area
 		li.name
-			h1 = link_to ""
+			= link_to root_path
+				.logo = image_tag("fido_logo.png", height: '37px')
 		li.toggle-topbar
 			a
-				= "MENU "
 				i.fi-list
 
 	section.top-bar-section
@@ -15,6 +15,9 @@ nav.top-bar data-topbar=true
 				li.divider
 				li = link_to "Sign Out", destroy_user_session_path, method: :delete
 			- else
-				li = link_to "Sign In", new_user_session_path
+				li 
+					= link_to new_user_session_path
+						i.fi-torso
+						|Sign In
 		ul.right.hide-for-large-up
 			= render "layouts/navigation_links"
