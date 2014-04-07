@@ -1,0 +1,11 @@
+
+javascript:
+	$('#event_alert_#{event.id}').hide();
+	$('#event_alert_#{event.id}').fadeIn();
+
+.joyride-tip-guide.event_alert.small-12.columns id="event_alert_#{event.id}"
+	.joyride-content-wrapper
+		h4 New Event Triggered
+		h4.subtitle = event.alert
+	.joyride-close-tip onclick="javascript:$('#event_alert_#{event.id}').fadeOut()"
+		a href="#" x

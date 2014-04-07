@@ -16,9 +16,10 @@ body
 		= render partial: "layouts/navigation"
 	main data-equalizer=true
 		.large-3.columns.show-for-large-up id="side-column" data-equalizer-watch=true
-			= render partial: "layouts/side_column"
+			.sticky = render partial: "layouts/side_column"
 		.large-9.columns id="main-area" data-equalizer-watch=true
 			= render partial: "layouts/messages"
+			#event_alerts.row = sync_new partial: "event_notification", resource: Event.new
 			== yield
 	footer
 		= render partial: "layouts/footer"
