@@ -1,2 +1,0 @@
-class VestController < ApplicationController
-end

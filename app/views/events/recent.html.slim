@@ -1,9 +1,3 @@
-javascript:
-	Pusher.log = function(message) {
-	  if (window.console && window.console.log) {
-	    window.console.log(message);
-	  }
-	};
 
 div *(@event ? {'data-equalizer' => true} : {'class' => 'medium-12 columns'})
 	div *(@event ? {'data-equalizer-watch' => true} : {}) class="#{@event ? 'medium-6 columns' : ''}"

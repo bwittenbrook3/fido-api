@@ -85,6 +85,9 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dragonfly (1.0.4)
+      multi_json (~> 1.0)
+      rack
     em-http-request (1.1.2)
       addressable (>= 2.3.4)
       cookiejar
@@ -300,6 +303,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner (= 1.0.1)
   devise
+  dragonfly
   email_spec
   factory_girl_rails
   figaro

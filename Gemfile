@@ -44,6 +44,9 @@ gem 'grape-entity'
 gem 'grape-swagger'
 gem 'swagger-ui_rails'
 
+# Work with images
+gem 'dragonfly'
+
 # Used for Rails 4 in Heroku
 gem 'rails_12factor', group: :production
 

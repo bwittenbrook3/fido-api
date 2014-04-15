@@ -5,7 +5,7 @@ li.has-dropdown class="#{'active' if (controller.controller_name=='events' && co
 		li = link_to "Event Type"
 		li = link_to "Location"
 		li = link_to "K9"
-li = link_to "Current K9s"
+li = link_to "Current K9s", k9s_path
 li = link_to "Maps"
 li class="#{'active' if current_page?(api_path)}" 
 	= link_to "API Documentation", api_path

@@ -1,0 +1,9 @@
+javascript:
+	$("#main-area").addClass("right-collapse");
+
+.medium-4.columns
+	h2 K9s
+	== render @vests
+.medium-8.columns#info_panel.right-collapse
+	== render partial: "info_panel", locals: {vest: @vests.first}
+

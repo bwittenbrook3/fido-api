@@ -10,6 +10,8 @@ FidoApi::Application.routes.draw do
 		get 'recent', on: :member
 	end
 
+	resources :vests, path: "k9s", as: "k9s"
+
 
 
 
