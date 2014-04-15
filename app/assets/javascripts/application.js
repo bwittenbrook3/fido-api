@@ -26,6 +26,11 @@ $( document ).ready(function() {
 
 $(function(){ 
 	$(document).foundation(); 
+	$(document).on('click', '[data-reveal-remote]', function(){
+		var $src = $(this);
+		$($src.data('reveal-remote')).foundation('reveal', 'open', $src.attr('href'));
+		return false;
+	});
 
 	$(window).scroll(function() {
 		$(".side-nav").css("height", ($(window).height()- 85) + "px");

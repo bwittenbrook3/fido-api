@@ -1,0 +1,10 @@
+.reveal-modal#edit_k9_modal data-reveal=true
+	= simple_form_for(vest, url: edit_k9_path(vest)) do |f|
+		.row
+			.medium-6.columns
+				= f.input :K9
+			.medium-6.columns
+				= f.input :photo, as: :file
+		= f.button :submit
+	a.close-reveal-modal &#215;
+	
