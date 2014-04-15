@@ -3,7 +3,13 @@ javascript:
 
 .medium-4.columns
 	h2 K9s
+	a.button data-reveal=true href="#" data-reveal-id="new_k9_modal" New K9
 	== render @vests
+	javascript:
+		$("#vest_#{@vests.first.id}").addClass("active");
 .medium-8.columns#info_panel.right-collapse
 	== render partial: "info_panel", locals: {vest: @vests.first}
 
+
+#new_k9_modal.medium.reveal-modal[data-reveal]
+	== render partial: "new_k9", locals: {k9: Vest.new}

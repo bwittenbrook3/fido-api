@@ -2,9 +2,10 @@ class Vest < ActiveRecord::Base
 	has_many :attachments
 	has_many :events
 
+	dragonfly_accessor :image
+
 	include Tire::Model::Search
 	include Tire::Model::Callbacks 
-
 	include Grape::Entity::DSL
 
 	def entity
