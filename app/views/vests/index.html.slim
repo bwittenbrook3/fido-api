@@ -1,14 +1,20 @@
 javascript:
 	$("#main-area").addClass("right-collapse");
 
-.medium-4.columns
-	h2 K9s
-	a.button data-reveal=true href="#" data-reveal-id="new_k9_modal" New K9
-	== render @vests
-	javascript:
-		$("#vest_#{@vests.first.id}").addClass("active");
-.medium-8.columns#info_panel.right-collapse
-	== render partial: "info_panel", locals: {vest: @vests.first}
+div data-equalizer=true
+
+	.medium-4.columns data-equalizer-watch=true
+		#k9_list
+			h2 K9s 
+			a.button data-reveal=true href="#" data-reveal-id="new_k9_modal" New K9
+			== render @vests
+		javascript:
+			$("#vest_#{@vests.first.id}").addClass("active");
+			if ($("#k9_list").height() <= ($( window ).height() - 45)) {
+				$("#k9_list").css("height", ($( window ).height() - 45) + "px");
+			}
+	.medium-8.columns#info_panel.right-collapse data-equalizer-watch=true
+		== render partial: "info_panel", locals: {vest: @vests.first}
 
 
 #new_k9_modal.medium.reveal-modal[data-reveal]
