@@ -6,7 +6,8 @@ div data-equalizer=true
 	.medium-4.columns data-equalizer-watch=true
 		#k9_list
 			h2 K9s 
-			a.button data-reveal=true href="#" data-reveal-id="new_k9_modal" New K9
+			- if current_user
+				a.button data-reveal=true href="#" data-reveal-id="new_k9_modal" New K9
 			== render @vests
 		javascript:
 			$("#vest_#{@vests.first.id}").addClass("active");

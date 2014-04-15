@@ -1,8 +1,8 @@
 h2 Add a K9
-= simple_form_for(k9, url: new_k9_path) do |f|
+= simple_form_for(k9, url: k9_path(k9)) do |f|
 	.row
 		.medium-6.columns
 			= f.input :K9
 		.medium-6.columns
-			= f.input :photo, as: :file
+			= f.input :image, as: :file
 	= f.button :submit

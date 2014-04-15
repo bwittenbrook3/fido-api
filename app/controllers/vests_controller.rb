@@ -3,6 +3,11 @@ class VestsController < ApplicationController
 		@vests = Vest.all.order("created_at ASC")
 	end
 
+	def create
+		@vest = Vest.create(vest_params)
+		redirect_to k9s_path
+	end
+
 	def show
 		@vest = Vest.find(params[:id])
 
