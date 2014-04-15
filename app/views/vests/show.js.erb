@@ -1,0 +1,3 @@
+$("#info_panel").html("<%= raw escape_javascript(render(:partial => 'info_panel', locals: {vest: @vest})) %>");
+$(".vest.active").removeClass("active");
+$("#vest_<%= @vest.id %>").addClass("active");
