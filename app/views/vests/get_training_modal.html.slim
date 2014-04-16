@@ -1,0 +1,4 @@
+h4 Select the completed training below
+= simple_form_for @k9, url: k9_path(@k9) do |f|
+	= f.association :trainings, as: :check_boxes
+	= f.submit

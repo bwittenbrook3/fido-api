@@ -1,0 +1,11 @@
+table.medium-12.columns
+	thead
+		tr 
+			th width="30%" Training
+			th width="70%" Description
+	tbody
+		- k9.trainings.each do |training|
+			tr
+				td = training.title
+				td = training.description
+	

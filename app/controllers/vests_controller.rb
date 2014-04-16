@@ -27,10 +27,15 @@ class VestsController < ApplicationController
 		redirect_to k9s_path
 	end
 
+	def get_training_modal
+		@k9 = Vest.find(params[:id])
+		render :get_training_modal, :layout => false
+	end
+
 	private
 	def vest_params
 		params.require(:vest).permit(
-			:K9, :officer, :image
+			:K9, :officer, :image, training_ids: []
 		)
 	end
 end

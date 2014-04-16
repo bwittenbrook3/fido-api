@@ -10,7 +10,12 @@ FidoApi::Application.routes.draw do
 		get 'recent', on: :member
 	end
 
-	resources :vests, path: "k9s", as: "k9s"
+	resources :vests, path: "k9s", as: "k9s" do
+		get "add_training", on: :member, to: "vests#get_training_modal"
+		post "add_training", on: :member
+	end
+
+	resources :training
 
 
 

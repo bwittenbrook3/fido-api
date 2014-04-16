@@ -14,4 +14,9 @@ javascript:
 		- else
 			.right = image_tag "http://placehold.it/150x150&text=No+Image"
 
-.reveal-modal#edit_k9_modal data-reveal=true
+
+= render partial: "training_for_k9", locals: {k9: vest}
+a href="#{add_training_k9_path(vest)}" data-reveal-remote="#edit_k9_modal" Add Training 
+
+#edit_k9_modal.reveal-modal data-reveal=true
+#add_training_modal.reveal-modal data-reveal=true
