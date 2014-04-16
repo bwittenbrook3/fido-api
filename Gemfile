@@ -46,6 +46,7 @@ gem 'swagger-ui_rails'
 
 # Work with images
 gem 'dragonfly'
+gem 'dragonfly-cloudinary'
 
 # Used for Rails 4 in Heroku
 gem 'rails_12factor', group: :production
