@@ -1,4 +1,5 @@
 require 'dragonfly'
+require 'dragonfly/s3_data_store'
 
 # Configure
 Dragonfly.app.configure do
@@ -9,9 +10,11 @@ Dragonfly.app.configure do
 
   url_format "/media/:job/:name"
 
-  datastore :file,
-    root_path: Rails.root.join('public/system/dragonfly', Rails.env),
-    server_root: Rails.root.join('public')
+  datastore :s3,
+    bucket_name: 'fido-api-bucket',
+    access_key_id: "AKIAJ6MHGWP5AYCW2FBA",
+    secret_access_key: "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"
+
 end
 
 # Logger

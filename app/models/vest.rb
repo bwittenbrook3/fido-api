@@ -3,7 +3,23 @@ class Vest < ActiveRecord::Base
 	has_many :events
 	has_and_belongs_to_many :trainings
 
-	dragonfly_accessor :image
+	dragonfly_accessor :image do
+		copy_to(:icon){|a| a.thumb('x150') }
+		storage_options do |attachment|
+      {
+        path: "fido-api/vest/image/#{self.created_at}_#{self.image_name}",
+        headers: {"x-amz-acl" => "public-read-write"}
+      }
+    end
+  end
+  dragonfly_accessor :icon do 
+  	storage_options do |attachment|
+      {
+        path: "fido-api/vest/icon/#{self.created_at}_#{self.image_name}",
+        headers: {"x-amz-acl" => "public-read-write"}
+      }
+    end
+  end
 
 	include Tire::Model::Search
 	include Tire::Model::Callbacks 

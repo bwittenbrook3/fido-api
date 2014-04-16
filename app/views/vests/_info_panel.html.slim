@@ -10,7 +10,7 @@ javascript:
 			a.button href="#{edit_k9_path(vest)}" data-reveal-remote="#edit_k9_modal" Edit 
 	.medium-6.columns
 		- if vest.image_stored? 
-			.right = image_tag Dragonfly.app.fetch(vest.image_uid).thumb('x150').url 
+			.right = image_tag vest.icon.remote_url if vest.icon_stored?
 		- else
 			.right = image_tag "http://placehold.it/150x150&text=No+Image"
 

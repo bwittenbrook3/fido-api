@@ -38,6 +38,5 @@ module FidoApi
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     ENV['ELASTICSEARCH_URL'] = ENV['SEARCHBOX_URL']
-
   end
 end
