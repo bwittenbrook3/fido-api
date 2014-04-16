@@ -5,15 +5,24 @@ javascript:
 .row
 	.medium-6.columns
 		h2 = vest.K9
-		h5.subheader Status: On Patrol
+		h5.subheader 
+			|Status: 
+			= vest.status
+		h5.subheader
+			|Age: 
+			= vest.age
+		= link_to "Recent Events", recent_events_path(vest_id: vest.id), class: "button"
+		.row
 		- if current_user
-			a.button href="#{edit_k9_path(vest)}" data-reveal-remote="#edit_k9_modal" Edit 
+			a href="#{edit_k9_path(vest)}" data-reveal-remote="#edit_k9_modal" Edit 
+
 	.medium-6.columns
 		- if vest.image_stored? 
 			.right = image_tag vest.image.thumb('x150').url
 		- else
 			.right = image_tag "http://placehold.it/150x150&text=No+Image"
 
+hr
 
 = render partial: "training_for_k9", locals: {k9: vest}
 a href="#{add_training_k9_path(vest)}" data-reveal-remote="#edit_k9_modal" Add Training 

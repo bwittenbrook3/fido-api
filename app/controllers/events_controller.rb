@@ -5,6 +5,8 @@ class EventsController < ApplicationController
 	def recent
 		if params[:search_string]
 			@events = Event.search(params[:search_string].join(" "), load: true)
+		elsif params[:vest_id]
+			@events = Vest.find(params[:vest_id]).events.order('created_at DESC')
 		else
 			@events = Event.order('created_at DESC').all
 		end

@@ -35,7 +35,7 @@ class VestsController < ApplicationController
 	private
 	def vest_params
 		params.require(:vest).permit(
-			:K9, :officer, :image, training_ids: []
+			:K9, :officer, :image, :status, :age, training_ids: []
 		)
 	end
 end
