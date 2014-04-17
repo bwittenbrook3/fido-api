@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
 	belongs_to :attachment
 	belongs_to :vest
+	has_and_belongs_to_many :resources
 
 	validates :vest, presence: true 
 	validates :attachment, presence: true

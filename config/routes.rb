@@ -29,6 +29,7 @@ FidoApi::Application.routes.draw do
 		end
 		resources :events do
 			get 'new_channel', on: :collection
+			resources :resources
 		end
 	end
 	mount API::Root => '/api'
