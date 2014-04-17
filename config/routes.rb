@@ -22,8 +22,10 @@ FidoApi::Application.routes.draw do
 
 	namespace :api, :constraints => {:format => /(json)/} do 
 		resources :attachments
-		resources :vests
-		resources :events
+		resources :vests 
+		resources :events do
+			get 'new_channel', on: :collection
+		end
 	end
 	mount API::Root => '/api'
 	get '/api', to: 'high_voltage/pages#show', id: 'api_documentation'

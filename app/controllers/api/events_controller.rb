@@ -3,6 +3,11 @@ module Api
 
 		enable_sync only: [:create, :update, :destroy]
 
+		def new_channel
+			@channel = Sync::PartialCreator.new("event", Event.new, nil, nil).channel
+			render :json => {channel: @channel}, status: :ok
+		end
+
 		def index
 			@events = Event.all
 			render :json => @events

@@ -52,5 +52,9 @@ module API
     delete '/events/:id' do
     end
 
+    desc "Get the new Event Pusher Channel"
+    params do 
+    end
+    get '/events/new_channel'
   end
 end
