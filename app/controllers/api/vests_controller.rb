@@ -32,6 +32,16 @@ module Api
 			render :json => {url: @image_path}, status: :ok
 		end
 
+		def training
+			@training = Vest.find(params[:id]).trainings
+			render :json => @training, status: :ok
+		end
+
+		def events
+			@events = Vest.find(params[:id]).events 
+			render :json => @events, status: :ok
+		end
+
 		private
 		def vest_params
 			params.require(:vest).permit(

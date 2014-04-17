@@ -40,8 +40,16 @@ module API
     delete 'vests/:id' do
     end
 
-    desc "Get the image path for the Vest"
+    desc "Get the image path for the K9"
     get "vests/:id/image_path" do 
+    end
+
+    desc "Get the training the K9"
+    get "vests/:id/training" do
+    end
+
+    desc "Get all events of the K9"
+    get "vests/:id/events" do
     end
   end
 end

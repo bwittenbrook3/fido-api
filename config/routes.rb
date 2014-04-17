@@ -24,6 +24,8 @@ FidoApi::Application.routes.draw do
 		resources :attachments
 		resources :vests do 
 			get 'image_path', on: :member
+			get 'training', on: :member
+			get 'events', on: :member
 		end
 		resources :events do
 			get 'new_channel', on: :collection
