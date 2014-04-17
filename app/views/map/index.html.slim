@@ -1,5 +1,6 @@
-h2 hi
-h3 = request.location.latitude
-h3 = request.location.longitude
-- @events.each do |e|
-	p = e.id
+h2 
+	|Events near: 
+	small = request.location.coordinates
+
+
+== render partial: "map", locals: {hash: @hash}
