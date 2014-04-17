@@ -22,7 +22,9 @@ FidoApi::Application.routes.draw do
 
 	namespace :api, :constraints => {:format => /(json)/} do 
 		resources :attachments
-		resources :vests 
+		resources :vests do 
+			get 'image_path', on: :member
+		end
 		resources :events do
 			get 'new_channel', on: :collection
 		end

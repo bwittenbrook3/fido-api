@@ -39,5 +39,9 @@ module API
     desc "Delete a specific Vest"
     delete 'vests/:id' do
     end
+
+    desc "Get the image path for the Vest"
+    get "vests/:id/image_path" do 
+    end
   end
 end

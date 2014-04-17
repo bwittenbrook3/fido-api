@@ -27,6 +27,11 @@ module Api
 			render :json => nil, status: :ok
 		end
 
+		def image_path
+			@image_path = Vest.find(params[:id]).image.remote_url
+			render :json => {url: @image_path}, status: :ok
+		end
+
 		private
 		def vest_params
 			params.require(:vest).permit(
