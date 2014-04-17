@@ -19,16 +19,16 @@ class Event < ActiveRecord::Base
 	end
 
 	def send_text_message_alert
-		number_to_send_to ='6787871824'
+		#number_to_send_to ='xxxxxxxxxx'
 
-		account_sid = 'AC9a2cb1b0065296852a707eb38e8e9ded' 
-		auth_token = '97edc27fff31c4128d95a20e6b2e869a' 
+		#account_sid = 'xxx' 
+		#auth_token = 'xxx' 
 
 		# set up a client to talk to the Twilio REST API 
-		@client = Twilio::REST::Client.new account_sid, auth_token 
+		#@client = Twilio::REST::Client.new account_sid, auth_token 
 		 
 		#@client.account.messages.create({
-		#		:from => '+16785345126',
+		#		:from => '+xxxxxxxxxx',
 		#	:to => number_to_send_to,
     #  		:body => "ALERT: Attachment #{self.attachment.id} was triggered on Vest #{self.vest.id}!"  
 		#})

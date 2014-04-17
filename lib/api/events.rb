@@ -56,5 +56,18 @@ module API
     params do 
     end
     get '/events/new_channel'
+
+    desc "Get all resources for an Event"
+    get '/events/:id/resources'
+
+    desc "Add a resources to an Event"
+    params do 
+      group :resource do 
+        requires :type, type: String, desc: "Type of resource"
+        requires :data, type: String, desc: "Data for the resource"
+        requires :image, :type => "Rack::Multipart::UploadedFile", :desc => "Image file."
+      end
+    end
+    post '/events/:id/resources'
   end
 end
