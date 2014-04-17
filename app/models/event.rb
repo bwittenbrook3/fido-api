@@ -5,7 +5,8 @@ class Event < ActiveRecord::Base
 	validates :vest, presence: true 
 	validates :attachment, presence: true
 
-	reverse_geocoded_by :latitude, :longitude
+	reverse_geocoded_by :latitude, :longitude 
+	after_validation :reverse_geocode
 
 	sync :all
 

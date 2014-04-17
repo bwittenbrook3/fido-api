@@ -16,7 +16,7 @@ FidoApi::Application.routes.draw do
 	end
 
 	resources :training
-
+	get 'maps', to: "map#index"
 
 
 

@@ -1,12 +1,7 @@
 li class="#{'active' if current_page?(root_path)}" = link_to "Home", root_path
-li.has-dropdown class="#{'active' if (controller.controller_name=='events' && controller.action_name=='recent')}" 
-	= link_to "Recent Events", recent_events_path
-	ul.dropdown
-		li = link_to "Event Type"
-		li = link_to "Location"
-		li = link_to "K9"
-li = link_to "Current K9s", k9s_path
-li = link_to "Maps"
+li.has-dropdown class="#{'active' if (controller.controller_name=='events' && controller.action_name=='recent')}" = link_to "Recent Events", recent_events_path
+li class="#{'active' if current_page?(k9s_path)}" = link_to "Current K9s", k9s_path
+li class="#{'active' if current_page?(maps_path)}" = link_to "Maps", maps_path
 li class="#{'active' if current_page?(api_path)}" 
 	= link_to "API Documentation", api_path
 li.divider.hide-for-large-up
