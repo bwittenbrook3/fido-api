@@ -12,8 +12,7 @@ class Vest < ActiveRecord::Base
     end
   end
 
-	include Tire::Model::Search
-	include Tire::Model::Callbacks 
+	searchkick
 	include Grape::Entity::DSL
 
 	def entity

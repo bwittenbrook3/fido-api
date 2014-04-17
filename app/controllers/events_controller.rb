@@ -3,8 +3,14 @@ class EventsController < ApplicationController
 	enable_sync only: [:create, :update, :destroy]
 
 	def recent
+
+
 		if params[:search_string]
-			@events = Event.search(params[:search_string].join(" "), load: true)
+			@events = Event.search params[:search_string]
+			if params[:vest_id]
+				@events = Event.search params[:search_string], where: {vest_id: params[:vest_id]}
+			end
+			@events
 		elsif params[:vest_id]
 			@events = Vest.find(params[:vest_id]).events.order('created_at DESC')
 		else

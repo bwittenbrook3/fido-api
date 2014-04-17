@@ -13,8 +13,8 @@ Dragonfly.app.configure do
 
   datastore :s3,
     bucket_name: 'fido-api-bucket',
-    access_key_id: "AKIAJ6MHGWP5AYCW2FBA",
-    secret_access_key: "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"
+    access_key_id: ENV['S3_KEY'],
+    secret_access_key: ENV['S3_SECRET']
 
 end
 

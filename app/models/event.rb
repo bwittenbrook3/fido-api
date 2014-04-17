@@ -9,8 +9,7 @@ class Event < ActiveRecord::Base
 
 	sync :all
 
-	include Tire::Model::Search
-	include Tire::Model::Callbacks 
+	searchkick 
 	include Grape::Entity::DSL
 
 	def entity

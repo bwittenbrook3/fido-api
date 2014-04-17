@@ -22,7 +22,8 @@ gem 'gmaps4rails'
 gem 'underscore-rails'
 
 # Add Tire for search
-gem 'tire'
+#gem 'tire'
+gem "searchkick"
 
 # Add geocoder
 gem 'geocoder'

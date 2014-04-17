@@ -1,5 +1,7 @@
 .panel id="search"
 	= form_tag recent_events_path, :method => :get, :id => 'event-search' do
+		- if params[:vest_id]
+			= hidden_field_tag 'vest_id', params[:vest_id]
 		.row.collapse
 			.medium-10.columns
 				= search_field("search_string", nil, placeholder: 'Search')
