@@ -42,6 +42,20 @@ module Api
 			render :json => @events, status: :ok
 		end
 
+		def recent_locations
+			max_length = 10
+			@vest = Vest.find(params[:id])
+			@vest.recent_locations ||= "[]"
+			@recent_locations = eval(@vest.recent_locations)
+			@recent_locations << {longitude: params[:location][:longitude], latitude: params[:location][:latitude]}
+			if @recent_locations.length > max_length
+				@recent_locations.shift
+			end
+			@vest.recent_locations = @recent_locations.to_s
+			@vest.save
+			render :json => @recent_locations, status: :ok
+		end
+
 		private
 		def vest_params
 			params.require(:vest).permit(

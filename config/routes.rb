@@ -27,6 +27,7 @@ FidoApi::Application.routes.draw do
 			get 'image_path', on: :member
 			get 'training', on: :member
 			get 'events', on: :member
+			post "recent_locations", on: :member
 		end
 		resources :events do
 			get 'new_channel', on: :collection

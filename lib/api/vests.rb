@@ -51,5 +51,15 @@ module API
     desc "Get all events of the K9"
     get "vests/:id/events" do
     end
+
+    desc "Update the recent location of the K9"
+    params do 
+      group :location do  
+        requires :latitude, type: String
+        requires :longitude, type: String
+      end
+    end
+    post "/vests/:id/recent_locations" do 
+    end
   end
 end
