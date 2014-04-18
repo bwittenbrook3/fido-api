@@ -50,6 +50,9 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'dragonfly'
 gem 'dragonfly-s3_data_store'
 
+# Pagnation
+gem 'kaminari'
+
 # Used for Rails 4 in Heroku
 gem 'rails_12factor', group: :production
 

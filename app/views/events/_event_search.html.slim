@@ -7,6 +7,10 @@
 				= search_field("search_string", nil, placeholder: 'Search')
 			.medium-2.columns
 				a.button.postfix href="#" onclick="javascript:$('#event-search').submit();" Search
+		- if events.suggestions.any?
+			p 
+				|Did you mean: 
+				= link_to events.suggestions.first, recent_events_path(search_string: events.suggestions.first, vest_id: params[:vest_id]), :method => :get
 		.row.clearfix
 			.left
 				h6 search by: 

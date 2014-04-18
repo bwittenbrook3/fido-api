@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
 
 	sync :all
 
-	searchkick 
+	searchkick suggest: ["alert"]
 	include Grape::Entity::DSL
 
 	def entity

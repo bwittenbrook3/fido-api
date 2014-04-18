@@ -6,15 +6,15 @@ class EventsController < ApplicationController
 
 
 		if params[:search_string]
-			@events = Event.search params[:search_string]
+			@events = Event.search params[:search_string], page: params[:page], per_page: 20, suggest: true
 			if params[:vest_id]
-				@events = Event.search params[:search_string], where: {vest_id: params[:vest_id]}
+				@events = Event.search params[:search_string], where: {vest_id: params[:vest_id]}, page: params[:page], per_page: 20,  suggest: true
 			end
 			@events
 		elsif params[:vest_id]
-			@events = Vest.find(params[:vest_id]).events.order('created_at DESC')
+			@events = Event.search "*", where: {vest_id: params[:vest_id]}, order: {created_at: :desc}, page: params[:page], per_page: 10, suggest: true
 		else
-			@events = Event.order('created_at DESC').all
+			@events = Event.search "*", order: {created_at: :desc}, page: params[:page], per_page: 5, suggest: true
 		end
 
 		if params[:id]
