@@ -24,6 +24,7 @@ gem 'underscore-rails'
 # Add Tire for search
 #gem 'tire'
 gem "searchkick"
+gem 'twitter-typeahead-rails'
 
 # Add geocoder
 gem 'geocoder'

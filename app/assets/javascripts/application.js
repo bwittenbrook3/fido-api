@@ -18,6 +18,7 @@
 //= require underscore
 //= require gmaps/google
 //= require sync
+//= require twitter/typeahead
 //= require_tree .
 
 $( document ).ready(function() {

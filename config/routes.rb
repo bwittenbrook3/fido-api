@@ -8,6 +8,7 @@ FidoApi::Application.routes.draw do
 	resources :events do
 		get 'recent', on: :collection 
 		get 'recent', on: :member
+		get 'autocomplete_alert', on: :collection
 	end
 
 	resources :vests, path: "k9s", as: "k9s" do

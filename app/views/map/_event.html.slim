@@ -1,17 +1,20 @@
-div width="150px"
+div.marker width="150px"
 	.row
 		.small-4.columns
 			- if event.vest.image_stored? 
-				= image_tag event.vest.image.thumb('x150').url, width: '100%'
+				= image_tag event.vest.image.thumb('x227').url, width: '100%'
 		.small-8.columns
 			= link_to recent_events_path(event_id: event.id)
 				h4 
 					= event.vest.K9
 					= " "
 					small = event.alert
-			h4
-				small 
+			p.small
 					= time_ago_in_words(event.created_at)
 					= " ago"
 					br
 					= event.address
+			hr
+			p.small
+				b Description: 
+				= event.details

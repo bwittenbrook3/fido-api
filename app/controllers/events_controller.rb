@@ -75,6 +75,16 @@ class EventsController < ApplicationController
 		@events = Event.search(params[:search_string].join(" "))
 	end
 
+	def autocomplete_alert
+		@events = Event.search(params[:query], fields: [{alert: :text_start}], limit: 10).map(&:alert).uniq 
+		@alerts = []
+		@events.each do |e|
+			@alerts << {value: e}
+		end
+	
+		render json: @alerts
+	end
+
 	private
 	def event_params
 		params.require(:event).permit(
