@@ -17,6 +17,7 @@ module Api
 			@event = Event.new(event_params)
 			if @event.valid?
 				@event.save
+				sync_new @event
 				@event.send_text_message_alert
 				render :json => @event
 			else

@@ -21,6 +21,12 @@ body
 			= render partial: "layouts/messages"
 			#event_alerts.row = sync_new partial: "event_notification", resource: Event.new
 			== yield
+		javascript:
+			Pusher.log = function(message) {
+			  if (window.console && window.console.log) {
+			    window.console.log(message);
+			  }
+			};
 	footer
 		= render partial: "layouts/footer"
 
