@@ -3,16 +3,16 @@ class EventsController < ApplicationController
 	enable_sync only: [:create, :update, :destroy]
 
 	def recent
-
-
-		if params[:search_string]
-			@events = Event.search params[:search_string], page: params[:page], per_page: 20, suggest: true
+		if params[:event_id]
+			@events = Event.search "*", where: {id: params[:event_id]}, page: params[:page], per_page: 5, suggest: true
+		elsif params[:search_string]
+			@events = Event.search params[:search_string], page: params[:page], per_page: 5, suggest: true
 			if params[:vest_id]
-				@events = Event.search params[:search_string], where: {vest_id: params[:vest_id]}, page: params[:page], per_page: 20,  suggest: true
+				@events = Event.search params[:search_string], where: {vest_id: params[:vest_id]}, page: params[:page], per_page: 5,  suggest: true
 			end
 			@events
 		elsif params[:vest_id]
-			@events = Event.search "*", where: {vest_id: params[:vest_id]}, order: {created_at: :desc}, page: params[:page], per_page: 10, suggest: true
+			@events = Event.search "*", where: {vest_id: params[:vest_id]}, order: {created_at: :desc}, page: params[:page], per_page: 5, suggest: true
 		else
 			@events = Event.search "*", order: {created_at: :desc}, page: params[:page], per_page: 5, suggest: true
 		end

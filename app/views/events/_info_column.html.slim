@@ -12,16 +12,21 @@ ul
 	li 
 		|Responding Officer: 
 		= @event.vest.officer if @event.vest
-	li Location:
-	ul 
-		li 
-			|Lat: 
-			= @event.latitude.to_s
-			/!|33°46'37.3"N 
+	li 
+		|Location:
+		= "\n"
+		= @event.address
+
+	/!
+		ul 
 			li 
-				|Long: 
-				= @event.longitude.to_s
-				/!|84°23'23.0"W
+				|Lat: 
+				= @event.latitude.to_s
+				/!|33°46'37.3"N 
+				li 
+					|Long: 
+					= @event.longitude.to_s
+					/!|84°23'23.0"W
 	p 
 		|Details:  
 		= @event.details

@@ -1,20 +1,5 @@
 .row
 	h2 API Documentation
 
-	javascript:
-		Pusher.log = function(message) {
-		  if (window.console && window.console.log) {
-		    window.console.log(message);
-		  }
-		};
-
-	h4 API Key
-
-	p Please look for your secret API key on your user page. 
-
-	hr
-
-	h4 Swagger Docs
-
 	= render 'swagger_ui/swagger_ui', discovery_url: 'swagger_doc.json'
 
