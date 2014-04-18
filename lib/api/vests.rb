@@ -10,8 +10,11 @@ module API
     desc "Create a new Vest"
    	params do
       group :vest do 
-        requires :name, type: String, desc: "Vest ID" 
-        requires :description, type: String, desc: "Attachment ID" 
+        requires :K9, type: String
+        requires :officer, type: String
+        requires :status, type: String
+        requires :age, type: String
+        requires :image, :type => "Rack::Multipart::UploadedFile", :desc => "Image file."
       end
   	end
     post '/vests' do
@@ -29,8 +32,11 @@ module API
     }
     params do
       group :vest do 
-        requires :name, type: String, desc: "Vest ID" 
-        requires :description, type: String, desc: "Attachment ID" 
+        requires :K9, type: String
+        requires :officer, type: String
+        requires :status, type: String
+        requires :age, type: String
+        requires :image, :type => "Rack::Multipart::UploadedFile", :desc => "Image file."
       end
     end
     put 'vests/:id' do

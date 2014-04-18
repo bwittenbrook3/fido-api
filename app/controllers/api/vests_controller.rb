@@ -59,7 +59,7 @@ module Api
 		private
 		def vest_params
 			params.require(:vest).permit(
-				:name, :description
+				:K9, :officer, :image, :status, :age, training_ids: []
 			)
 		end
 	end
