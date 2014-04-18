@@ -43,7 +43,8 @@ gem 'foundation-rails', '=5.2.0.0'
 gem 'grape'
 gem 'grape-entity'
 gem 'grape-swagger'
-gem 'swagger-ui_rails'
+gem 'swagger-ui_rails', :git => 'git://github.com/bwittenbrook3/swagger-ui_rails.git'
+gem 'rack-cors', :require => 'rack/cors'
 
 # Work with images
 gem 'dragonfly'

@@ -38,5 +38,13 @@ module FidoApi
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     ENV['ELASTICSEARCH_URL'] = ENV['SEARCHBOX_URL']
+
+    config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        # location of your API
+        resource '/api/*', :headers => :any, :methods => [:get, :post, :options, :put]
+      end
+    end
   end
 end

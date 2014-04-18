@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/bwittenbrook3/swagger-ui_rails.git
+  revision: 2747b8729c41b6a61ab3989e46d46861bcad5e5c
+  specs:
+    swagger-ui_rails (0.1.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -215,6 +221,7 @@ GEM
     rack (1.5.2)
     rack-accept (0.4.5)
       rack (>= 0.4)
+    rack-cors (0.2.9)
     rack-mount (0.8.3)
       rack (>= 1.0.0)
     rack-test (0.6.2)
@@ -282,7 +289,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    swagger-ui_rails (0.1.7)
     sync (0.3.0)
       em-http-request
     temple (0.6.7)
@@ -350,6 +356,7 @@ DEPENDENCIES
   pg
   pusher
   quiet_assets
+  rack-cors
   rails (= 4.0.0)
   rails_12factor
   rails_layout
@@ -358,7 +365,7 @@ DEPENDENCIES
   searchkick
   simple_form
   slim-rails
-  swagger-ui_rails
+  swagger-ui_rails!
   sync
   therubyracer
   thin
