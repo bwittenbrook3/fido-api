@@ -85,6 +85,20 @@ class EventsController < ApplicationController
 		render json: @alerts
 	end
 
+	def edit
+		@event = Event.find(params[:id])
+		render :edit, :layout => false
+	end
+
+	def update
+		@event = Event.find(params[:id])
+		@event.update(event_params)
+
+		respond_to do |format|
+			format.js 
+		end
+	end
+
 	private
 	def event_params
 		params.require(:event).permit(

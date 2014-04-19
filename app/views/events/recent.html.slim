@@ -1,16 +1,22 @@
 
 div *(@event ? {'data-equalizer' => true} : {'class' => 'medium-12 columns'})
 	div *(@event ? {'data-equalizer-watch' => true} : {}) class="#{@event ? 'medium-6 columns' : ''}"
-		= render partial: "event_search", locals: {events: @events}
-		.pagnation = paginate @events
-		.event_list
-			= sync_new partial: 'event', resource: Event.new, direction: :prepend
-			- @events.each do |event|
-				= sync partial: 'event', resource: event
-			/!= render @events
+		#event_list
+			= render partial: "event_search", locals: {events: @events}
+			.pagnation = paginate @events
+			.event_list
+				= sync_new partial: 'event', resource: Event.new, direction: :prepend
+				- @events.each do |event|
+					= sync partial: 'event', resource: event
+				/!= render @events
 	- if @event		
 		javascript:
 			$("#event_#{@event.id}").addClass('active');
 			$("#main-area").addClass("right-collapse");
 		.medium-6.columns.right-collapse id="info_panel" data-equalizer-watch=true
 			= render partial: "info_column", object: @event
+
+javascript:
+	if ($("#event_list").height() <= ($( window ).height() - 60)) {
+		$("#event_list").css("height", ($( window ).height() - 60) + "px");
+	}
