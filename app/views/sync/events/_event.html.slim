@@ -1,4 +1,4 @@
-= div_for(event)
+= div_for(event, class: "#{@events.nil? ? 'active' : ''}")
 	= link_to recent_event_path(event), remote: true
 		h4 
 			= event.alert
@@ -8,5 +8,4 @@
 	h5.subheader.indented 
 		= time_ago_in_words(event.created_at)
 		= " ago"
-
-	.triangle.right class="#{params[:id] == event.id ? 'active' : ''}"
+	.triangle.right
