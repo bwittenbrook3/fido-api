@@ -1,2 +1,3 @@
 $('#edit_event_modal').foundation('reveal', 'close');
 $("#info_panel").html("<%= raw escape_javascript(render(:partial => 'info_column')) %>");
+$("#event_<%= @event.id %>").addClass("active");
