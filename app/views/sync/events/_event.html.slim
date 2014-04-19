@@ -9,4 +9,4 @@
 		= time_ago_in_words(event.created_at)
 		= " ago"
 
-	.triangle.right
+	.triangle.right class="#{params[:id] == event.id ? 'active' : ''}"
