@@ -93,6 +93,7 @@ class EventsController < ApplicationController
 	def update
 		@event = Event.find(params[:id])
 		@event.update(event_params)
+		sync_update @event
 
 		respond_to do |format|
 			format.js 
