@@ -1,5 +1,8 @@
-h2 
-	|Events near: 
-	small = request.location.coordinates
+- if request.location
+	h2 
+		|Events near: 
+		small = request.location.coordinates
+- else
+	h2 All Events:
 
 == render partial: "map", locals: {hash: @hash}
