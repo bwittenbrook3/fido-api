@@ -58,7 +58,7 @@ module Api
 		private
 		def event_params
 			params.require(:event).permit(
-				:vest_id, :attachment_id, :alert, :details, :latitude, :longitude
+				:vest_id, :attachment_id, :alert, :details, :latitude, :longitude, :recent_locations
 			)
 		end
 	end
