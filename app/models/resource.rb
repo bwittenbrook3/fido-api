@@ -1,4 +1,7 @@
 class Resource < ActiveRecord::Base
+
+	sync :all
+
 	has_and_belongs_to_many :events
 	dragonfly_accessor :image do
 		storage_options do |attachment|

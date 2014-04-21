@@ -30,8 +30,11 @@ FidoApi::Application.routes.draw do
 			post "recent_locations", on: :member
 		end
 		resources :events do
+			resources :resources do 
+				get 'new_channel', on: :collection
+			end
 			get 'new_channel', on: :collection
-			resources :resources
+			post "recent_locations", on: :member
 		end
 	end
 	mount API::Root => '/api'

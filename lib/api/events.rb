@@ -69,5 +69,20 @@ module API
       end
     end
     post '/events/:id/resources'
+
+    desc "Update the recent location of the K9"
+    params do 
+      group :location do  
+        requires :latitude, type: String
+        requires :longitude, type: String
+      end
+    end
+    post "/events/:id/recent_locations" do 
+    end
+
+    desc "Get the new resource Channel."
+    get "/events/:id/resources/new_channel" do 
+    end
+
   end
 end

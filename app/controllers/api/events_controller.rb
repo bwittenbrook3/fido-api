@@ -41,6 +41,20 @@ module Api
 			render :json => nil, status: :ok
 		end
 
+		def recent_locations
+			max_length = 100
+			@event = Event.find(params[:id])
+			@event.recent_locations ||= "[]"
+			@recent_locations = eval(@event.recent_locations)
+			@recent_locations << {longitude: params[:location][:longitude], latitude: params[:location][:latitude]}
+			if @recent_locations.length > max_length
+				@recent_locations.shift
+			end
+			@event.recent_locations = @recent_locations.to_s
+			@event.save
+			render :json => @recent_locations, status: :ok
+		end
+
 		private
 		def event_params
 			params.require(:event).permit(
