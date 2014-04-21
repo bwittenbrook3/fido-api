@@ -26,6 +26,7 @@ module API
         requires :alert, type: String
         requires :longitude, type: Float
         requires :latitude, type: Float
+        requires :event_type, type: String
       end
     end
     post '/events' do
@@ -41,6 +42,7 @@ module API
         requires :alert, type: String
         requires :longitude, type: Float
         requires :latitude, type: Float
+        requires :event_type, type: String
       end
     end
     put '/events/:id' do
