@@ -2,6 +2,8 @@
 	.triangle.right
 	= link_to k9_path(vest), remote: true
 		h4 = vest.K9
-	h5.subheader Status: On Patrol
+	h5.subheader 
+		|Status: 
+		= vest.status
 	hr
 	

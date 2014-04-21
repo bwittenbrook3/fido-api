@@ -3,6 +3,8 @@ class EventsController < ApplicationController
 	enable_sync only: [:create, :update, :destroy]
 
 	def recent
+
+
 		if params[:event_id]
 			@events = Event.search "*", where: {id: params[:event_id]}, page: params[:page], per_page: 5, suggest: true
 		elsif params[:search_string]

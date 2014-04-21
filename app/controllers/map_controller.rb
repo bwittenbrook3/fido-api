@@ -1,6 +1,11 @@
 class MapController < ApplicationController
 	def index
-		@events = Event.near(request.location.coordinates, 25)
+		loc = request.location
+		if loc
+			@events = Event.near(loc.coordinates, 25)
+		else
+			@events = Event.all
+		end
 		@hash = Gmaps4rails.build_markers(@events) do |event, marker|
 		  marker.lat event.latitude
 		  marker.lng event.longitude
