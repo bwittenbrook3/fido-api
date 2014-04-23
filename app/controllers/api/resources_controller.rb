@@ -8,8 +8,11 @@ module Api
 		end
 
 		def create
-			@resource = Event.find(params[:event_id]).resources.create(resource_params)
-			sync Event.find(params[:event_id])
+			@resource = Resource.create(resource_params)
+			@event = Event.find(params[:event_id])
+			@resource.event_id = @event.id
+			@resource.save
+			sync_new @resource
 			render :json => @resource, status: :ok
 			#@resource = Event.find(params[:event_id]).resources.create(resource_params)
 		end
@@ -23,7 +26,7 @@ module Api
 		private
 		def resource_params
 			params.require(:resource).permit(
-				:data, :image
+				:data_type, :data, :image
 			)
 		end
 	end

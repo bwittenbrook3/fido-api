@@ -42,6 +42,13 @@ module Api
 			render :json => @events, status: :ok
 		end
 
+		def recent_location
+			@vest = Vest.find(params[:id])
+			@vest.recent_locations ||= "[]"
+			@recent_locations = eval(@vest.recent_locations)
+			render :json => {location: @recent_locations.last}, status: :ok
+		end
+
 		def recent_locations
 			max_length = 10
 			@vest = Vest.find(params[:id])
@@ -53,13 +60,20 @@ module Api
 			end
 			@vest.recent_locations = @recent_locations.to_s
 			@vest.save
+			sync_update @vest
 			render :json => @recent_locations, status: :ok
+		end
+
+		def location_updated_channel
+			@vest = Vest.find(params[:id])
+			@channel = Sync::Channel.new("/vests/#{@vest.id}-_vest").to_s + "-update"
+			render :json => {channel: @channel}, status: :ok
 		end
 
 		private
 		def vest_params
 			params.require(:vest).permit(
-				:K9, :officer, :image, :status, :age, training_ids: []
+				:K9, :officer, :image, :status, :age, :color, training_ids: []
 			)
 		end
 	end

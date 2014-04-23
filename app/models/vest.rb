@@ -3,6 +3,8 @@ class Vest < ActiveRecord::Base
 	has_many :events
 	has_and_belongs_to_many :trainings
 
+	sync :all
+
 	dragonfly_accessor :image do
 		storage_options do |attachment|
       {
@@ -12,7 +14,6 @@ class Vest < ActiveRecord::Base
     end
   end
 
-	searchkick
 	include Grape::Entity::DSL
 
 	def entity

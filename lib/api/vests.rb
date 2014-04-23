@@ -14,6 +14,7 @@ module API
         requires :officer, type: String
         requires :status, type: String
         requires :age, type: String
+        requires :color, type: String
         requires :image, :type => "Rack::Multipart::UploadedFile", :desc => "Image file."
       end
   	end
@@ -36,6 +37,7 @@ module API
         requires :officer, type: String
         requires :status, type: String
         requires :age, type: String
+        requires :color, type: String
         requires :image, :type => "Rack::Multipart::UploadedFile", :desc => "Image file."
       end
     end
@@ -56,6 +58,14 @@ module API
 
     desc "Get all events of the K9"
     get "vests/:id/events" do
+    end
+
+    desc "Recent location Pusher Channel"
+    get "/vests/:id/location_updated_channel" do 
+    end
+
+    desc "Get the recent location of the K9"
+    get "/vests/:id/recent_location" do 
     end
 
     desc "Update the recent location of the K9"

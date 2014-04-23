@@ -55,6 +55,12 @@ module Api
 			render :json => @recent_locations, status: :ok
 		end
 
+		def new_resource_channel
+			@event = Event.find(params[:id])
+			@channel = Sync::PartialCreator.new("resource", Resource.new, Resource.by_event_id(@event.id), nil).channel
+			render :json => {channel: @channel}, status: :ok
+		end
+
 		private
 		def event_params
 			params.require(:event).permit(

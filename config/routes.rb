@@ -28,12 +28,15 @@ FidoApi::Application.routes.draw do
 			get 'training', on: :member
 			get 'events', on: :member
 			post "recent_locations", on: :member
+			get 'recent_location', on: :member
+			get 'location_updated_channel', on: :member
 		end
 		resources :events do
 			resources :resources do 
 				get 'new_channel', on: :collection
 			end
 			get 'new_channel', on: :collection
+			get 'new_resource_channel', on: :member
 			post "recent_locations", on: :member
 		end
 	end

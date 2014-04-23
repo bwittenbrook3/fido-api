@@ -1,8 +1,10 @@
 class Resource < ActiveRecord::Base
 
-	sync :all
+  sync :all
+  sync_scope :by_event_id, ->(event_id) { where(event_id: event_id) }
 
-	has_and_belongs_to_many :events
+	belongs_to :event
+
 	dragonfly_accessor :image do
 		storage_options do |attachment|
       {
@@ -11,4 +13,5 @@ class Resource < ActiveRecord::Base
       }
     end
   end
+
 end

@@ -66,7 +66,7 @@ module API
     params do 
       group :resource do 
         requires :type, type: String, desc: "Type of resource"
-        requires :data, type: String, desc: "Data for the resource"
+        requires :data_type, type: String, desc: "Data for the resource"
         requires :image, :type => "Rack::Multipart::UploadedFile", :desc => "Image file."
       end
     end
@@ -83,7 +83,7 @@ module API
     end
 
     desc "Get the new resource Channel."
-    get "/events/:id/resources/new_channel" do 
+    get "/events/:id/new_resource_channel" do 
     end
 
   end
